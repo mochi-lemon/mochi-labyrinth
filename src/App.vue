@@ -1,25 +1,24 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 in CodeSandbox!" />
+  <h1 style="color: #f00">Hello</h1>
+  <div v-for="i in 50">
+    <div v-if="i % 4 == 0" style="background-color: #ff0">{{ i }}</div>
+    <div v-if="i % 4 != 0" style="background-color: #fff">labyrinth</div>
+  </div>
 </template>
 
 <script>
-import HelloWorldVue from "./components/HelloWorld.vue";
-export default {
-  name: "App",
+import { defineComponent } from "vue";
+import New from "./components/New.vue";
+
+export default defineComponent({
   components: {
-    HelloWorld: HelloWorldVue,
+    New,
   },
-};
+  setup() {
+    return;
+  },
+});
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
